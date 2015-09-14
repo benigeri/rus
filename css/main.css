@@ -1,0 +1,332 @@
+/*------------------------------------*\
+ *     #Fonts
+\*------------------------------------*/
+@font-face {
+    font-family: Gotham;
+    src: url("../fonts/Gotham-Medium-Multi.otf") format("opentype");
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+ *     #BOILERPLATE
+\*------------------------------------*/
+
+html, body{
+    height:100%;
+    background: #fff;
+    color: #342447;
+    font-size: 18px;
+    font-family: Gotham;
+}
+
+h1, h2 {
+    font-size: 18px;
+    font-family: Gotham;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+h2 {
+    padding: 20px;
+}
+
+p {
+    font-family: Georgia;
+    padding: 20px;
+}
+
+a { 
+    text-decoration: none;
+    color: #FC0061;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #FC0061;
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+ *     #SIDEBAR
+\*------------------------------------*/
+
+.sidebar {
+    position: fixed;
+    height: 100%;
+}
+
+    .sidebar__logo {
+        max-width: 320px;
+        max-height: 320px;
+        margin: 0 auto;
+        /* Added padding so logo isn't edge to edge with other images */
+        padding: 20px; 
+    }
+
+        .sidebar__logo img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+    .sidebar__link {
+        text-align: center;
+    }
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+ *     #CONTENT
+\*------------------------------------*/
+
+.content {
+    float: right;
+}
+
+.content--tiles {
+    font-size: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+ *     #ABOUT
+\*------------------------------------*/
+
+.about {
+    margin-top: 160px;
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+ *     #WORK
+\*------------------------------------*/
+
+.work {
+    margin: auto;
+    font-family: Georgia;
+}
+
+    .work__title {
+        padding: 20px;
+    }
+
+    .work__text {
+    }
+
+    .work__img {
+        max-width: 100%; 
+        margin: auto;
+    }
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+ *     #TILE
+\*------------------------------------*/
+
+.tile {
+        overflow: hidden;
+        display: block;
+        float: left;
+        position: relative;
+}
+
+    .tile__overlay {
+        position: absolute;
+        background: #FFF;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        transition: opacity .3s ease-in-out;
+
+    }
+
+    .tile__image {
+        max-width: 100%;
+        transition: -webkit-transform .3s ease-in-out;
+    }
+
+
+        .tile__image:after {
+            background: blue;
+
+        } 
+
+    .tile:hover .tile__overlay, .tile:hover .tile__title {
+        opacity: .8;
+    }
+
+    .tile:hover .tile__image {
+        -webkit-transform: scale(1.1); 
+    }
+
+    .tile__title {
+        font-size: 18px;
+        box-sizing: border-box;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        z-index: 20;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: opacity .3s ease-in-out;
+        -webkit-font-smoothing: subpixel-antialiased;
+        color: #342447;
+     }
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+ *     #MEDIA_QUERIES
+\*------------------------------------*/
+
+/* Single column */
+@media (max-width: 639px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: 95%;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .tile {
+        width: 100%;
+    }
+
+    .about {
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    .work {
+        width: 100%;
+    }
+}
+
+/* Two columns */
+@media (min-width: 640px) {
+    .sidebar {
+        width: 50%;
+    }
+
+    .content { 
+        width: 50%;
+    }
+
+    .tile {
+        width: 100%;
+    }
+
+    .about {
+        width: 100%;
+    }
+
+    .work {
+        width: 100%;
+    }
+}
+
+/* Three columns */
+@media (min-width: 960px) {
+    .sidebar {
+        width: 33.33333334%;
+    }
+
+    .content {
+        width: 66.66666666%;
+    }
+
+    .tile {
+        width: 50%;
+    }
+
+    .about {
+        width: 100%;
+    }
+
+    .work {
+        width: 66.66666666%;
+    }
+}
+
+/* Four columns */
+@media (min-width: 1280px) {
+    .sidebar {
+        width: 25%;
+    }
+
+    .content {
+        width: 75%;
+    }
+
+    .tile {
+        width: 33.33333333%;
+    }
+
+    .about {
+        width: 66.66666667%;
+    }
+
+    .work {
+        width: 50%;
+    }
+}
